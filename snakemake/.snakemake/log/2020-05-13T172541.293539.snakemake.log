@@ -1,3 +1,0 @@
-FileNotFoundError in line 24 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-[Errno 2] No such file or directory: 'data/annotations'
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 24, in <module>

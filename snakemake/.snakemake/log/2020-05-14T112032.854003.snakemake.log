@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 72 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-Missing input files for rule removeExon:
-data/annotations_folder/ENSG00000242553.gtf
-data/annotations_folder/ENSG00000223608.gtf
-data/annotations_folder/ENSG00000141956.gtf

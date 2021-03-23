@@ -1,3 +1,0 @@
-WildcardError in line 63 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-No values given for wildcard 'filewildcard'.
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 63, in <module>

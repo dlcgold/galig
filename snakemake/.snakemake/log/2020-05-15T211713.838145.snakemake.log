@@ -1,3 +1,0 @@
-KeyError in line 9 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-'results'
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 9, in <module>

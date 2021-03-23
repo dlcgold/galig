@@ -1,3 +1,0 @@
-AttributeError in line 4 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-'Rules' object has no attribute 'downloadG'
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 4, in <module>

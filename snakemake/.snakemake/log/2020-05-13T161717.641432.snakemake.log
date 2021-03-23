@@ -1,3 +1,0 @@
-NameError in line 26 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-name 'removeExon' is not defined
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 26, in <module>

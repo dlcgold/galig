@@ -1,3 +1,0 @@
-KeyError in line 12 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-'numberOfgtf'
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 12, in <module>

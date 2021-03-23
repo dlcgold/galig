@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 44 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-Missing input files for rule splitAnnotation:
-annotations

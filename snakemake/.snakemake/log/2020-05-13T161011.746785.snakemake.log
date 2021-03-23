@@ -1,5 +1,0 @@
-The flag 'directory' used in rule removeExon is only valid for outputs, not inputs.
-Building DAG of jobs...
-MissingInputException in line 67 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-Missing input files for rule removeExon:
-data/annotations

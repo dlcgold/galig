@@ -1,5 +1,0 @@
-The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
-Building DAG of jobs...
-MissingInputException in line 206 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-Missing input files for rule generatePlot:
-data/results

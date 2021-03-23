@@ -1,2 +1,0 @@
-SyntaxError in line 123 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-Command must be given as string after the shell keyword. (Snakefile, line 123)

@@ -1,5 +1,0 @@
-ValueError in line 63 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-expected '}' before end of string
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 63, in <module>
-  File "/usr/lib/python3.8/string.py", line 167, in vformat
-  File "/usr/lib/python3.8/string.py", line 176, in _vformat

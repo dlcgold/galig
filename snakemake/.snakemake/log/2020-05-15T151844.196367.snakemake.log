@@ -1,3 +1,0 @@
-WildcardError in line 120 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
-No values given for wildcard 'gene'.
-  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 120, in <module>

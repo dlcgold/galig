@@ -1,5 +1,0 @@
-The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
-Building DAG of jobs...
-Updating job 0 (run_after_checkpoint).
-Nothing to be done.
-Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-16T112500.391287.snakemake.log

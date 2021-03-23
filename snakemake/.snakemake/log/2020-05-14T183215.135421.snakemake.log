@@ -1,0 +1,6 @@
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+InputFunctionException in line 100 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+IndexError: list index out of range
+Wildcards:
+

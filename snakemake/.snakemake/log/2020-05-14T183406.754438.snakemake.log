@@ -1,0 +1,15 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	test
+	1
+
+[Thu May 14 18:34:06 2020]
+rule test:
+    jobid: 0
+
+RuleException in line 103 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+NameError: The name 'gene' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

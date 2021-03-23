@@ -1,0 +1,43 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+The flag 'directory' used in rule removeExon is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	removeExon
+	1	splitAnnotation
+	3
+
+[Wed May 13 15:48:24 2020]
+rule splitAnnotation:
+    input: data/annotation21.gtf, data
+    output: data/annotations
+    jobid: 2
+
+[Wed May 13 15:48:26 2020]
+Finished job 2.
+1 of 3 steps (33%) done
+
+[Wed May 13 15:48:26 2020]
+rule removeExon:
+    input: data/annotations, data/chr21.fa, data
+    output: data/annotationsLessExon
+    jobid: 1
+
+Terminating processes on user request, this might take some time.
+[Wed May 13 15:48:30 2020]
+Error in rule removeExon:
+    jobid: 1
+    output: data/annotationsLessExon
+
+RuleException:
+CalledProcessError in line 78 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Command 'set -euo pipefail;  /usr/bin/python /home/dlcgold/stage-unimib/extra/snake/.snakemake/scripts/tmp2748c0wb.removeExon.py' died with <Signals.SIGINT: 2>.
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 78, in __rule_removeExon
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Removing output files of failed job removeExon since they might be corrupted:
+data/annotationsLessExon
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-13T154824.813857.snakemake.log

@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	splitAnnotation
+	1
+
+[Tue May 12 21:35:33 2020]
+rule splitAnnotation:
+    input: data/annotation21.gtf, data
+    jobid: 0
+
+[Tue May 12 21:35:33 2020]
+Error in rule splitAnnotation:
+    jobid: 0
+
+RuleException:
+URLError in line 48 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+<urlopen error [Errno 2] No such file or directory: '/home/dlcgold/stage-unimib/extra/snake/scripts/splitGen.py'>
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 48, in __rule_splitAnnotation
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/usr/lib/python3.8/urllib/request.py", line 525, in open
+  File "/usr/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/usr/lib/python3.8/urllib/request.py", line 1454, in file_open
+  File "/usr/lib/python3.8/urllib/request.py", line 1493, in open_local_file
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-12T213533.765896.snakemake.log

@@ -1,0 +1,3 @@
+KeyError in line 6 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+'params'
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 6, in <module>

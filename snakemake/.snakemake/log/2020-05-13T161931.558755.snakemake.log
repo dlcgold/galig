@@ -1,0 +1,3 @@
+AttributeError in line 26 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+'Rules' object has no attribute 'removeExon'
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 26, in <module>

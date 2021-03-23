@@ -1,0 +1,57 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	downloadAnnotation
+	1	downloadGenome
+	1	extractAnnotation
+	1	removeExon
+	1	splitAnnotation
+	6
+
+[Wed May 13 18:12:03 2020]
+rule downloadAnnotation:
+    output: data/annotation.gtf
+    jobid: 5
+
+
+[Wed May 13 18:12:03 2020]
+rule downloadGenome:
+    output: data/chr21.fa
+    jobid: 3
+
+[Wed May 13 18:12:14 2020]
+Finished job 3.
+1 of 6 steps (17%) done
+[Wed May 13 18:12:18 2020]
+Finished job 5.
+2 of 6 steps (33%) done
+
+[Wed May 13 18:12:18 2020]
+rule extractAnnotation:
+    input: data/annotation.gtf
+    output: data/annotation21.gtf
+    jobid: 4
+
+[Wed May 13 18:12:26 2020]
+Finished job 4.
+3 of 6 steps (50%) done
+
+[Wed May 13 18:12:26 2020]
+rule splitAnnotation:
+    input: data/annotation21.gtf, data
+    output: data/annotations.txt, data/annotations
+    jobid: 2
+
+ImproperOutputException in line 58 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule splitAnnotation:
+data/annotations
+Removing output files of failed job splitAnnotation since they might be corrupted:
+data/annotations.txt, data/annotations
+Skipped removing non-empty directory data/annotations
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-13T181203.739530.snakemake.log

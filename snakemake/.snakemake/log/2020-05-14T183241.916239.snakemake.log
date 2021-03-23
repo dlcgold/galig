@@ -1,0 +1,4 @@
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+WorkflowError in line 100 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Function did not return str or list of str.

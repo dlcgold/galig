@@ -67,3 +67,18 @@ An extended explanation of this example can be found <a href="http://asgal.algol
 The tool has been tested only on 64bit Linux system. You can find more information at [http://asgal.algolab.eu](http://asgal.algolab.eu).
 
 [![Join the chat at https://gitter.im/AlgoLab/galig](https://badges.gitter.im/AlgoLab/galig.svg)](https://gitter.im/AlgoLab/galig?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+#### Novel Exons
+With experimental novel exons search (C++17):
+```bash
+# Align RNA-Seq reads to a splicing graph
+./bin/SpliceAwareAligner -g [reference] -a [annotation] -s [sample] -o outputFolder/output.mem -i
+```
+
+Experimental snakemake pipeline for benchmarking with novel exons search:
+```bash
+cd snakemake
+# edit config.yaml for settings and than, N=cores to use:
+snakemake run_after_checkpoint --cores [N]
+```

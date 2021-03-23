@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	removeExon
+	1
+
+[Thu May 14 11:42:50 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000141956.gtf, data/annotations/ENSG00000223608.gtf, data/annotations/ENSG00000242553.gtf
+    output: data/annotationsLessExon.txt, data/annotationsLessExon
+    jobid: 0
+
+[Thu May 14 11:42:50 2020]
+Error in rule removeExon:
+    jobid: 0
+    output: data/annotationsLessExon.txt, data/annotationsLessExon
+    shell:
+        scripts/removeExon.py data/annotations/ENSG00000141956.gtf data/annotations/ENSG00000223608.gtf data/annotations/ENSG00000242553.gtf
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-14T114250.671022.snakemake.log

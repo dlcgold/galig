@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	downloadA
+	1	downloadG
+	3
+
+[Tue May 12 12:19:10 2020]
+rule downloadA:
+    output: data/annotation.gtf
+    jobid: 2
+
+
+[Tue May 12 12:19:10 2020]
+rule downloadG:
+    output: data/genome.fa
+    jobid: 1
+
+[Tue May 12 12:19:15 2020]
+Finished job 1.
+1 of 3 steps (33%) done
+[Tue May 12 12:19:26 2020]
+Error in rule downloadA:
+    jobid: 2
+    output: data/annotation.gtf
+    shell:
+        
+        cd data
+        wget ftp://ftp.ensembl.org/pub/release-100/gtf/homo_sapiens/Homo_sapiens.GRCh38.100.chr.gtf.gz
+        gzip -d Homo_sapiens.GRCh38.100.chr.gtf.gz
+        mv Homo_sapiens.GRCh38.100.chr.gtf ../data/annotation.gtf
+        grep -P "^21\t" data/annotation.gtf > data/annotation.gtf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job downloadA since they might be corrupted:
+data/annotation.gtf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-12T121910.873963.snakemake.log

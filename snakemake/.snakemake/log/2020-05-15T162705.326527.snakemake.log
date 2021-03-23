@@ -1,0 +1,3 @@
+NameError in line 101 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+name 'GENES' is not defined
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 101, in <module>

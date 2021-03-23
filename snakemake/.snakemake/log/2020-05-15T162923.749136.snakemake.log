@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	run_after_checkpoint
+	1
+
+[Fri May 15 16:29:23 2020]
+localrule run_after_checkpoint:
+    jobid: 0
+
+[Fri May 15 16:29:23 2020]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-15T162923.749136.snakemake.log

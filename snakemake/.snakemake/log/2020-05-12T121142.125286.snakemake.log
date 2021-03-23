@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	downloadA
+	1
+
+[Tue May 12 12:11:42 2020]
+rule downloadA:
+    output: data/annotation.gtf
+    jobid: 0
+
+[Tue May 12 12:11:59 2020]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-12T121142.125286.snakemake.log

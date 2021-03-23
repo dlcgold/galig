@@ -1,0 +1,3 @@
+NameError in line 95 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+name 'aggregate_mem' is not defined
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 95, in <module>

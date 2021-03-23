@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	downloadAnnotation
+	1	fetch_annotation
+	1	generatePlot
+	1	run_after_checkpoint
+	1	splitAnnotation
+	5
+
+[Fri Jul  3 17:16:39 2020]
+rule downloadAnnotation:
+    output: data/annotation.gtf
+    jobid: 4
+
+[Fri Jul  3 17:16:55 2020]
+Finished job 4.
+1 of 5 steps (20%) done
+
+[Fri Jul  3 17:16:55 2020]
+rule fetch_annotation:
+    input: data/annotation.gtf
+    output: data/annotation21.gtf
+    jobid: 3
+
+[Fri Jul  3 17:16:59 2020]
+Finished job 3.
+2 of 5 steps (40%) done
+
+[Fri Jul  3 17:16:59 2020]
+checkpoint splitAnnotation:
+    input: data/annotation21.gtf
+    output: data/annotations
+    jobid: 2
+Downstream jobs will be updated after completion.
+
+[Fri Jul  3 17:16:59 2020]
+Error in rule splitAnnotation:
+    jobid: 2
+    output: data/annotations
+
+RuleException:
+URLError in line 61 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+<urlopen error [Errno 2] No such file or directory: '/home/dlcgold/stage-unimib/extra/snake/scripts/splitGene.py'>
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 61, in __rule_splitAnnotation
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/usr/lib/python3.8/urllib/request.py", line 525, in open
+  File "/usr/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/usr/lib/python3.8/urllib/request.py", line 1485, in file_open
+  File "/usr/lib/python3.8/urllib/request.py", line 1524, in open_local_file
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-07-03T171638.938393.snakemake.log

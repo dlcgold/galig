@@ -1,0 +1,842 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	downloadAnnotation
+	1	fetch_annotation
+	1	generatePlot
+	1	run_after_checkpoint
+	1	splitAnnotation
+	5
+
+[Sun May 24 23:00:55 2020]
+rule downloadAnnotation:
+    output: data/annotation.gtf
+    jobid: 4
+
+[Sun May 24 23:01:10 2020]
+Finished job 4.
+1 of 5 steps (20%) done
+
+[Sun May 24 23:01:10 2020]
+rule fetch_annotation:
+    input: data/annotation.gtf
+    output: data/annotation7.gtf
+    jobid: 3
+
+[Sun May 24 23:01:12 2020]
+Finished job 3.
+2 of 5 steps (40%) done
+
+[Sun May 24 23:01:12 2020]
+checkpoint splitAnnotation:
+    input: data/annotation7.gtf
+    output: data/annotations
+    jobid: 2
+Downstream jobs will be updated after completion.
+
+Updating job 1 (generatePlot).
+[Sun May 24 23:01:52 2020]
+Finished job 2.
+3 of 21104 steps (0.01%) done
+
+[Sun May 24 23:01:52 2020]
+rule downloadGenome:
+    output: data/chr7.fa
+    jobid: 18090
+
+[Sun May 24 23:02:03 2020]
+Finished job 18090.
+4 of 21104 steps (0.02%) done
+
+[Sun May 24 23:02:04 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000127990.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000127990.fa
+    jobid: 19363
+    wildcards: gene=ENSG00000127990
+
+
+[Sun May 24 23:02:04 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000049540.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000049540.gtf
+    jobid: 16220
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000049540
+
+[Sun May 24 23:02:04 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000049540.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000049540.fa
+    jobid: 20637
+    wildcards: gene=ENSG00000049540
+
+
+[Sun May 24 23:02:04 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000127990.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000127990.gtf
+    jobid: 11124
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000127990
+
+[Sun May 24 23:02:05 2020]
+Finished job 11124.
+5 of 21104 steps (0.02%) done
+[Sun May 24 23:02:05 2020]
+Finished job 16220.
+6 of 21104 steps (0.03%) done
+
+[Sun May 24 23:02:06 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000122507.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000122507.gtf
+    jobid: 12552
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000122507
+
+[Sun May 24 23:02:06 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000122507.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000122507.fa
+    jobid: 19720
+    wildcards: gene=ENSG00000122507
+
+[Sun May 24 23:02:07 2020]
+Finished job 12552.
+7 of 21104 steps (0.03%) done
+
+[Sun May 24 23:02:07 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000257923.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000257923.gtf
+    jobid: 10176
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000257923
+
+[Sun May 24 23:02:09 2020]
+Finished job 10176.
+8 of 21104 steps (0.04%) done
+
+[Sun May 24 23:02:09 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000257923.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000257923.fa
+    jobid: 19126
+    wildcards: gene=ENSG00000257923
+
+[Sun May 24 23:02:12 2020]
+Finished job 20637.
+9 of 21104 steps (0.04%) done
+[Sun May 24 23:02:12 2020]
+Finished job 19363.
+10 of 21104 steps (0.05%) done
+
+[Sun May 24 23:02:12 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000127990.gtf, data/chr7.fa, data/annotations/ENSG00000127990.fa
+    output: data/annotations/ENSG00000127990.mem
+    jobid: 11123
+    benchmark: benchmarks/ENSG00000127990Origin.tsv
+    wildcards: gene=ENSG00000127990
+
+
+[Sun May 24 23:02:12 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000127990.gtf, data/chr7.fa, data/annotations/ENSG00000127990.fa
+    output: data/annotationsLessExon/ENSG00000127990.mem
+    jobid: 11122
+    benchmark: benchmarks/ENSG00000127990.tsv
+    wildcards: gene=ENSG00000127990
+
+[Sun May 24 23:02:14 2020]
+Finished job 19720.
+11 of 21104 steps (0.05%) done
+
+[Sun May 24 23:02:14 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000127990.gtf, data/chr7.fa, data/annotations/ENSG00000127990.fa
+    output: data/annotationsLessExon/ENSG00000127990NoExon.mem
+    jobid: 11125
+    benchmark: benchmarks/ENSG00000127990NoExon.tsv
+    wildcards: gene=ENSG00000127990
+
+[Sun May 24 23:02:18 2020]
+Finished job 19126.
+12 of 21104 steps (0.06%) done
+
+[Sun May 24 23:02:18 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000049540.gtf, data/chr7.fa, data/annotations/ENSG00000049540.fa
+    output: data/annotations/ENSG00000049540.mem
+    jobid: 16219
+    benchmark: benchmarks/ENSG00000049540Origin.tsv
+    wildcards: gene=ENSG00000049540
+
+[Sun May 24 23:02:28 2020]
+Finished job 16219.
+13 of 21104 steps (0.06%) done
+
+[Sun May 24 23:02:28 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000049540.gtf, data/chr7.fa, data/annotations/ENSG00000049540.fa
+    output: data/annotationsLessExon/ENSG00000049540NoExon.mem
+    jobid: 16221
+    benchmark: benchmarks/ENSG00000049540NoExon.tsv
+    wildcards: gene=ENSG00000049540
+
+[Sun May 24 23:02:34 2020]
+Finished job 11123.
+14 of 21104 steps (0.07%) done
+
+[Sun May 24 23:02:34 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000049540.gtf, data/chr7.fa, data/annotations/ENSG00000049540.fa
+    output: data/annotationsLessExon/ENSG00000049540.mem
+    jobid: 16218
+    benchmark: benchmarks/ENSG00000049540.tsv
+    wildcards: gene=ENSG00000049540
+
+[Sun May 24 23:02:36 2020]
+Finished job 11125.
+15 of 21104 steps (0.07%) done
+
+[Sun May 24 23:02:36 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000257923.gtf, data/chr7.fa, data/annotations/ENSG00000257923.fa
+    output: data/annotations/ENSG00000257923.mem
+    jobid: 10175
+    benchmark: benchmarks/ENSG00000257923Origin.tsv
+    wildcards: gene=ENSG00000257923
+
+[Sun May 24 23:02:37 2020]
+Finished job 16221.
+16 of 21104 steps (0.08%) done
+
+[Sun May 24 23:02:37 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000257923.gtf, data/chr7.fa, data/annotations/ENSG00000257923.fa
+    output: data/annotationsLessExon/ENSG00000257923NoExon.mem
+    jobid: 10177
+    benchmark: benchmarks/ENSG00000257923NoExon.tsv
+    wildcards: gene=ENSG00000257923
+
+[Sun May 24 23:02:41 2020]
+Finished job 10175.
+17 of 21104 steps (0.08%) done
+
+[Sun May 24 23:02:41 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000257923.gtf, data/chr7.fa, data/annotations/ENSG00000257923.fa
+    output: data/annotationsLessExon/ENSG00000257923.mem
+    jobid: 10174
+    benchmark: benchmarks/ENSG00000257923.tsv
+    wildcards: gene=ENSG00000257923
+
+[Sun May 24 23:02:42 2020]
+Finished job 10177.
+18 of 21104 steps (0.09%) done
+
+[Sun May 24 23:02:42 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000122507.gtf, data/chr7.fa, data/annotations/ENSG00000122507.fa
+    output: data/annotations/ENSG00000122507.mem
+    jobid: 12551
+    benchmark: benchmarks/ENSG00000122507Origin.tsv
+    wildcards: gene=ENSG00000122507
+
+[Sun May 24 23:02:47 2020]
+Finished job 16218.
+19 of 21104 steps (0.09%) done
+
+[Sun May 24 23:02:47 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000122507.gtf, data/chr7.fa, data/annotations/ENSG00000122507.fa
+    output: data/annotationsLessExon/ENSG00000122507NoExon.mem
+    jobid: 12553
+    benchmark: benchmarks/ENSG00000122507NoExon.tsv
+    wildcards: gene=ENSG00000122507
+
+[Sun May 24 23:02:49 2020]
+Finished job 11122.
+20 of 21104 steps (0.09%) done
+
+[Sun May 24 23:02:49 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000122507.gtf, data/chr7.fa, data/annotations/ENSG00000122507.fa
+    output: data/annotationsLessExon/ENSG00000122507.mem
+    jobid: 12550
+    benchmark: benchmarks/ENSG00000122507.tsv
+    wildcards: gene=ENSG00000122507
+
+[Sun May 24 23:02:50 2020]
+Finished job 12551.
+21 of 21104 steps (0.10%) done
+
+[Sun May 24 23:02:50 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000128513.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000128513.gtf
+    jobid: 13752
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000128513
+
+[Sun May 24 23:02:54 2020]
+Finished job 13752.
+22 of 21104 steps (0.10%) done
+
+[Sun May 24 23:02:54 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000128513.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000128513.fa
+    jobid: 20020
+    wildcards: gene=ENSG00000128513
+
+[Sun May 24 23:02:54 2020]
+Finished job 12553.
+23 of 21104 steps (0.11%) done
+
+[Sun May 24 23:02:54 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000106278.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000106278.gtf
+    jobid: 17352
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000106278
+
+[Sun May 24 23:02:58 2020]
+Finished job 17352.
+24 of 21104 steps (0.11%) done
+
+[Sun May 24 23:02:58 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000106278.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000106278.fa
+    jobid: 20920
+    wildcards: gene=ENSG00000106278
+
+[Sun May 24 23:03:02 2020]
+Finished job 12550.
+25 of 21104 steps (0.12%) done
+
+[Sun May 24 23:03:02 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000196367.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000196367.gtf
+    jobid: 15200
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000196367
+
+[Sun May 24 23:03:04 2020]
+Finished job 20020.
+26 of 21104 steps (0.12%) done
+
+[Sun May 24 23:03:04 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000128513.gtf, data/chr7.fa, data/annotations/ENSG00000128513.fa
+    output: data/annotations/ENSG00000128513.mem
+    jobid: 13751
+    benchmark: benchmarks/ENSG00000128513Origin.tsv
+    wildcards: gene=ENSG00000128513
+
+[Sun May 24 23:03:04 2020]
+Finished job 15200.
+27 of 21104 steps (0.13%) done
+
+[Sun May 24 23:03:05 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000128513.gtf, data/chr7.fa, data/annotations/ENSG00000128513.fa
+    output: data/annotationsLessExon/ENSG00000128513NoExon.mem
+    jobid: 13753
+    benchmark: benchmarks/ENSG00000128513NoExon.tsv
+    wildcards: gene=ENSG00000128513
+
+[Sun May 24 23:03:09 2020]
+Finished job 20920.
+28 of 21104 steps (0.13%) done
+
+[Sun May 24 23:03:09 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000106278.gtf, data/chr7.fa, data/annotations/ENSG00000106278.fa
+    output: data/annotations/ENSG00000106278.mem
+    jobid: 17351
+    benchmark: benchmarks/ENSG00000106278Origin.tsv
+    wildcards: gene=ENSG00000106278
+
+[Sun May 24 23:03:12 2020]
+Finished job 13751.
+29 of 21104 steps (0.14%) done
+[Sun May 24 23:03:12 2020]
+Finished job 13753.
+30 of 21104 steps (0.14%) done
+
+[Sun May 24 23:03:12 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000106278.gtf, data/chr7.fa, data/annotations/ENSG00000106278.fa
+    output: data/annotationsLessExon/ENSG00000106278NoExon.mem
+    jobid: 17353
+    benchmark: benchmarks/ENSG00000106278NoExon.tsv
+    wildcards: gene=ENSG00000106278
+
+
+[Sun May 24 23:03:12 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000106278.gtf, data/chr7.fa, data/annotations/ENSG00000106278.fa
+    output: data/annotationsLessExon/ENSG00000106278.mem
+    jobid: 17350
+    benchmark: benchmarks/ENSG00000106278.tsv
+    wildcards: gene=ENSG00000106278
+
+[Sun May 24 23:03:16 2020]
+Finished job 17351.
+31 of 21104 steps (0.15%) done
+
+[Sun May 24 23:03:16 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000128513.gtf, data/chr7.fa, data/annotations/ENSG00000128513.fa
+    output: data/annotationsLessExon/ENSG00000128513.mem
+    jobid: 13750
+    benchmark: benchmarks/ENSG00000128513.tsv
+    wildcards: gene=ENSG00000128513
+
+[Sun May 24 23:03:19 2020]
+Finished job 17353.
+32 of 21104 steps (0.15%) done
+
+[Sun May 24 23:03:19 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000196367.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000196367.fa
+    jobid: 20382
+    wildcards: gene=ENSG00000196367
+
+[Sun May 24 23:03:24 2020]
+Finished job 17350.
+33 of 21104 steps (0.16%) done
+
+[Sun May 24 23:03:24 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000128512.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000128512.fa
+    jobid: 20361
+    wildcards: gene=ENSG00000128512
+
+[Sun May 24 23:03:26 2020]
+Finished job 13750.
+34 of 21104 steps (0.16%) done
+
+[Sun May 24 23:03:26 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000128512.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000128512.gtf
+    jobid: 15116
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000128512
+
+[Sun May 24 23:03:28 2020]
+Finished job 15116.
+35 of 21104 steps (0.17%) done
+
+[Sun May 24 23:03:28 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000146839.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000146839.gtf
+    jobid: 14036
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000146839
+
+[Sun May 24 23:03:29 2020]
+Finished job 20382.
+36 of 21104 steps (0.17%) done
+
+[Sun May 24 23:03:29 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000196367.gtf, data/chr7.fa, data/annotations/ENSG00000196367.fa
+    output: data/annotations/ENSG00000196367.mem
+    jobid: 15199
+    benchmark: benchmarks/ENSG00000196367Origin.tsv
+    wildcards: gene=ENSG00000196367
+
+[Sun May 24 23:03:30 2020]
+Finished job 14036.
+37 of 21104 steps (0.18%) done
+
+[Sun May 24 23:03:30 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000196367.gtf, data/chr7.fa, data/annotations/ENSG00000196367.fa
+    output: data/annotationsLessExon/ENSG00000196367NoExon.mem
+    jobid: 15201
+    benchmark: benchmarks/ENSG00000196367NoExon.tsv
+    wildcards: gene=ENSG00000196367
+
+[Sun May 24 23:03:34 2020]
+Finished job 20361.
+38 of 21104 steps (0.18%) done
+[Sun May 24 23:03:34 2020]
+Finished job 15199.
+39 of 21104 steps (0.18%) done
+
+[Sun May 24 23:03:34 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000128512.gtf, data/chr7.fa, data/annotations/ENSG00000128512.fa
+    output: data/annotationsLessExon/ENSG00000128512.mem
+    jobid: 15114
+    benchmark: benchmarks/ENSG00000128512.tsv
+    wildcards: gene=ENSG00000128512
+
+
+[Sun May 24 23:03:34 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000128512.gtf, data/chr7.fa, data/annotations/ENSG00000128512.fa
+    output: data/annotations/ENSG00000128512.mem
+    jobid: 15115
+    benchmark: benchmarks/ENSG00000128512Origin.tsv
+    wildcards: gene=ENSG00000128512
+
+[Sun May 24 23:03:36 2020]
+Finished job 15201.
+40 of 21104 steps (0.19%) done
+
+[Sun May 24 23:03:36 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000128512.gtf, data/chr7.fa, data/annotations/ENSG00000128512.fa
+    output: data/annotationsLessExon/ENSG00000128512NoExon.mem
+    jobid: 15117
+    benchmark: benchmarks/ENSG00000128512NoExon.tsv
+    wildcards: gene=ENSG00000128512
+
+[Sun May 24 23:03:40 2020]
+Finished job 15115.
+41 of 21104 steps (0.19%) done
+
+[Sun May 24 23:03:40 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000196367.gtf, data/chr7.fa, data/annotations/ENSG00000196367.fa
+    output: data/annotationsLessExon/ENSG00000196367.mem
+    jobid: 15198
+    benchmark: benchmarks/ENSG00000196367.tsv
+    wildcards: gene=ENSG00000196367
+
+[Sun May 24 23:03:42 2020]
+Finished job 15117.
+42 of 21104 steps (0.20%) done
+
+[Sun May 24 23:03:42 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000146839.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000146839.fa
+    jobid: 20091
+    wildcards: gene=ENSG00000146839
+
+[Sun May 24 23:03:45 2020]
+Finished job 15114.
+43 of 21104 steps (0.20%) done
+
+[Sun May 24 23:03:45 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000187391.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000187391.fa
+    jobid: 20923
+    wildcards: gene=ENSG00000187391
+
+[Sun May 24 23:03:52 2020]
+Finished job 20091.
+44 of 21104 steps (0.21%) done
+
+[Sun May 24 23:03:52 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000146839.gtf, data/chr7.fa, data/annotations/ENSG00000146839.fa
+    output: data/annotations/ENSG00000146839.mem
+    jobid: 14035
+    benchmark: benchmarks/ENSG00000146839Origin.tsv
+    wildcards: gene=ENSG00000146839
+
+[Sun May 24 23:03:54 2020]
+Finished job 15198.
+45 of 21104 steps (0.21%) done
+
+[Sun May 24 23:03:54 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000146839.gtf, data/chr7.fa, data/annotations/ENSG00000146839.fa
+    output: data/annotationsLessExon/ENSG00000146839NoExon.mem
+    jobid: 14037
+    benchmark: benchmarks/ENSG00000146839NoExon.tsv
+    wildcards: gene=ENSG00000146839
+
+[Sun May 24 23:03:55 2020]
+Finished job 20923.
+46 of 21104 steps (0.22%) done
+
+[Sun May 24 23:03:55 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000146839.gtf, data/chr7.fa, data/annotations/ENSG00000146839.fa
+    output: data/annotationsLessExon/ENSG00000146839.mem
+    jobid: 14034
+    benchmark: benchmarks/ENSG00000146839.tsv
+    wildcards: gene=ENSG00000146839
+
+[Sun May 24 23:04:01 2020]
+Finished job 14035.
+47 of 21104 steps (0.22%) done
+
+[Sun May 24 23:04:01 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000187391.gtf, data/chr7.fa, data/annotations/ENSG00000187391.fa
+    output: data/annotations/ENSG00000187391.mem
+    jobid: 17363
+    benchmark: benchmarks/ENSG00000187391Origin.tsv
+    wildcards: gene=ENSG00000187391
+
+[Sun May 24 23:04:03 2020]
+Finished job 14037.
+48 of 21104 steps (0.23%) done
+
+[Sun May 24 23:04:03 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000187391.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000187391.gtf
+    jobid: 17364
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000187391
+
+[Sun May 24 23:04:05 2020]
+Finished job 17364.
+49 of 21104 steps (0.23%) done
+
+[Sun May 24 23:04:05 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000187391.gtf, data/chr7.fa, data/annotations/ENSG00000187391.fa
+    output: data/annotationsLessExon/ENSG00000187391.mem
+    jobid: 17362
+    benchmark: benchmarks/ENSG00000187391.tsv
+    wildcards: gene=ENSG00000187391
+
+[Sun May 24 23:04:09 2020]
+Finished job 17363.
+50 of 21104 steps (0.24%) done
+
+[Sun May 24 23:04:09 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000187391.gtf, data/chr7.fa, data/annotations/ENSG00000187391.fa
+    output: data/annotationsLessExon/ENSG00000187391NoExon.mem
+    jobid: 17365
+    benchmark: benchmarks/ENSG00000187391NoExon.tsv
+    wildcards: gene=ENSG00000187391
+
+[Sun May 24 23:04:10 2020]
+Finished job 14034.
+51 of 21104 steps (0.24%) done
+
+[Sun May 24 23:04:10 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000058404.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000058404.gtf
+    jobid: 10192
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000058404
+
+[Sun May 24 23:04:12 2020]
+Finished job 10192.
+52 of 21104 steps (0.25%) done
+
+[Sun May 24 23:04:12 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000058404.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000058404.fa
+    jobid: 19130
+    wildcards: gene=ENSG00000058404
+
+[Sun May 24 23:04:17 2020]
+Finished job 17365.
+53 of 21104 steps (0.25%) done
+
+[Sun May 24 23:04:17 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000055130.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000055130.gtf
+    jobid: 14068
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000055130
+
+[Sun May 24 23:04:19 2020]
+Finished job 14068.
+54 of 21104 steps (0.26%) done
+
+[Sun May 24 23:04:19 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000055130.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000055130.fa
+    jobid: 20099
+    wildcards: gene=ENSG00000055130
+
+[Sun May 24 23:04:23 2020]
+Finished job 19130.
+55 of 21104 steps (0.26%) done
+
+[Sun May 24 23:04:23 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000058404.gtf, data/chr7.fa, data/annotations/ENSG00000058404.fa
+    output: data/annotations/ENSG00000058404.mem
+    jobid: 10191
+    benchmark: benchmarks/ENSG00000058404Origin.tsv
+    wildcards: gene=ENSG00000058404
+
+[Sun May 24 23:04:30 2020]
+Finished job 20099.
+56 of 21104 steps (0.27%) done
+
+[Sun May 24 23:04:30 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000055130.gtf, data/chr7.fa, data/annotations/ENSG00000055130.fa
+    output: data/annotations/ENSG00000055130.mem
+    jobid: 14067
+    benchmark: benchmarks/ENSG00000055130Origin.tsv
+    wildcards: gene=ENSG00000055130
+
+[Sun May 24 23:04:31 2020]
+Finished job 10191.
+57 of 21104 steps (0.27%) done
+
+[Sun May 24 23:04:31 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000055130.gtf, data/chr7.fa, data/annotations/ENSG00000055130.fa
+    output: data/annotationsLessExon/ENSG00000055130NoExon.mem
+    jobid: 14069
+    benchmark: benchmarks/ENSG00000055130NoExon.tsv
+    wildcards: gene=ENSG00000055130
+
+[Sun May 24 23:04:37 2020]
+Finished job 14067.
+58 of 21104 steps (0.27%) done
+
+[Sun May 24 23:04:37 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000055130.gtf, data/chr7.fa, data/annotations/ENSG00000055130.fa
+    output: data/annotationsLessExon/ENSG00000055130.mem
+    jobid: 14066
+    benchmark: benchmarks/ENSG00000055130.tsv
+    wildcards: gene=ENSG00000055130
+
+[Sun May 24 23:04:39 2020]
+Finished job 14069.
+59 of 21104 steps (0.28%) done
+
+[Sun May 24 23:04:39 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000058404.gtf, data/chr7.fa, data/annotations/ENSG00000058404.fa
+    output: data/annotationsLessExon/ENSG00000058404NoExon.mem
+    jobid: 10193
+    benchmark: benchmarks/ENSG00000058404NoExon.tsv
+    wildcards: gene=ENSG00000058404
+
+[Sun May 24 23:04:46 2020]
+Finished job 10193.
+60 of 21104 steps (0.28%) done
+
+[Sun May 24 23:04:47 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000058404.gtf, data/chr7.fa, data/annotations/ENSG00000058404.fa
+    output: data/annotationsLessExon/ENSG00000058404.mem
+    jobid: 10190
+    benchmark: benchmarks/ENSG00000058404.tsv
+    wildcards: gene=ENSG00000058404
+
+[Sun May 24 23:04:48 2020]
+Finished job 14066.
+61 of 21104 steps (0.29%) done
+
+[Sun May 24 23:04:48 2020]
+rule generateReads:
+    input: data/annotations/ENSG00000128573.gtf, data/chr7.fa
+    output: data/annotations/ENSG00000128573.fa
+    jobid: 19946
+    wildcards: gene=ENSG00000128573
+
+[Sun May 24 23:04:58 2020]
+Finished job 19946.
+62 of 21104 steps (0.29%) done
+
+[Sun May 24 23:04:58 2020]
+rule generateMemNoIntron:
+    input: data/annotations/ENSG00000128573.gtf, data/chr7.fa, data/annotations/ENSG00000128573.fa
+    output: data/annotations/ENSG00000128573.mem
+    jobid: 13455
+    benchmark: benchmarks/ENSG00000128573Origin.tsv
+    wildcards: gene=ENSG00000128573
+
+[Sun May 24 23:05:01 2020]
+Finished job 10190.
+63 of 21104 steps (0.30%) done
+
+[Sun May 24 23:05:01 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000128573.gtf, data/chr7.fa
+    output: data/annotationsLessExon/ENSG00000128573.gtf
+    jobid: 13456
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000128573
+
+[Sun May 24 23:05:03 2020]
+Finished job 13456.
+64 of 21104 steps (0.30%) done
+
+[Sun May 24 23:05:03 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000128573.gtf, data/chr7.fa, data/annotations/ENSG00000128573.fa
+    output: data/annotationsLessExon/ENSG00000128573.mem
+    jobid: 13454
+    benchmark: benchmarks/ENSG00000128573.tsv
+    wildcards: gene=ENSG00000128573
+
+[Sun May 24 23:05:23 2020]
+Finished job 13455.
+65 of 21104 steps (0.31%) done
+
+[Sun May 24 23:05:23 2020]
+rule generateMemNoExon:
+    input: data/annotationsLessExon/ENSG00000128573.gtf, data/chr7.fa, data/annotations/ENSG00000128573.fa
+    output: data/annotationsLessExon/ENSG00000128573NoExon.mem
+    jobid: 13457
+    benchmark: benchmarks/ENSG00000128573NoExon.tsv
+    wildcards: gene=ENSG00000128573
+
+Terminating processes on user request, this might take some time.
+[Sun May 24 23:05:31 2020]
+Error in rule generateMemIntron:
+    jobid: 13454
+    output: data/annotationsLessExon/ENSG00000128573.mem
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr7.fa -a data/annotationsLessExon/ENSG00000128573.gtf -s data/annotations/ENSG00000128573.fa -o data/annotationsLessExon/ENSG00000128573.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+[Sun May 24 23:05:31 2020]
+
+Error in rule generateMemIntron:
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000128573.mem
+    jobid: 10174
+[Sun May 24 23:05:31 2020]
+Error in rule generateMemNoExon:
+    output: data/annotationsLessExon/ENSG00000257923.mem
+[Sun May 24 23:05:31 2020]
+    jobid: 13457
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr7.fa -a data/annotationsLessExon/ENSG00000257923.gtf -s data/annotations/ENSG00000257923.fa -o data/annotationsLessExon/ENSG00000257923.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+Error in rule generateMemIntron:
+    output: data/annotationsLessExon/ENSG00000128573NoExon.mem
+
+    jobid: 17362
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr7.fa -a data/annotationsLessExon/ENSG00000128573.gtf -s data/annotations/ENSG00000128573.fa -o data/annotationsLessExon/ENSG00000128573NoExon.mem
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000257923.mem
+    output: data/annotationsLessExon/ENSG00000187391.mem
+
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr7.fa -a data/annotationsLessExon/ENSG00000187391.gtf -s data/annotations/ENSG00000187391.fa -o data/annotationsLessExon/ENSG00000187391.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job generateMemNoExon since they might be corrupted:
+data/annotationsLessExon/ENSG00000128573NoExon.mem
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000187391.mem
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-24T230055.149024.snakemake.log

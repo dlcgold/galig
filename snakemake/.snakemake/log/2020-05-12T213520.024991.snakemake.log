@@ -1,0 +1,3 @@
+NameError in line 15 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+name 'annotationC' is not defined
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 15, in <module>

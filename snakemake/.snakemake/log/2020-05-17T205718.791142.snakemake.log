@@ -1,0 +1,252 @@
+The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	370	generateMemIntron
+	1	run_after_checkpoint
+	371
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000286886.gtf, data/chr21.fa, data/annotations/ENSG00000286886.fa
+    output: data/annotationsLessExon/ENSG00000286886.mem
+    jobid: 376
+    wildcards: gene=ENSG00000286886
+
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000286852.gtf, data/chr21.fa, data/annotations/ENSG00000286852.fa
+    output: data/annotationsLessExon/ENSG00000286852.mem
+    jobid: 860
+    wildcards: gene=ENSG00000286852
+
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000287637.gtf, data/chr21.fa, data/annotations/ENSG00000287637.fa
+    output: data/annotationsLessExon/ENSG00000287637.mem
+    jobid: 351
+    wildcards: gene=ENSG00000287637
+
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000286594.gtf, data/chr21.fa, data/annotations/ENSG00000286594.fa
+    output: data/annotationsLessExon/ENSG00000286594.mem
+    jobid: 40
+    wildcards: gene=ENSG00000286594
+
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000157551.gtf, data/chr21.fa, data/annotations/ENSG00000157551.fa
+    output: data/annotationsLessExon/ENSG00000157551.mem
+    jobid: 332
+    wildcards: gene=ENSG00000157551
+
+
+[Sun May 17 20:57:20 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000286902.gtf, data/chr21.fa, data/annotations/ENSG00000286902.fa
+    output: data/annotationsLessExon/ENSG00000286902.mem
+    jobid: 859
+    wildcards: gene=ENSG00000286902
+
+[Sun May 17 20:57:23 2020]
+Finished job 376.
+1 of 371 steps (0.27%) done
+
+[Sun May 17 20:57:23 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000202339.gtf, data/chr21.fa, data/annotations/ENSG00000202339.fa
+    output: data/annotationsLessExon/ENSG00000202339.mem
+    jobid: 24
+    wildcards: gene=ENSG00000202339
+
+[Sun May 17 20:57:25 2020]
+Finished job 860.
+2 of 371 steps (0.54%) done
+[Sun May 17 20:57:25 2020]
+Finished job 859.
+3 of 371 steps (0.81%) done
+
+[Sun May 17 20:57:25 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000237664.gtf, data/chr21.fa, data/annotations/ENSG00000237664.fa
+    output: data/annotationsLessExon/ENSG00000237664.mem
+    jobid: 708
+    wildcards: gene=ENSG00000237664
+
+
+[Sun May 17 20:57:25 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000225431.gtf, data/chr21.fa, data/annotations/ENSG00000225431.fa
+    output: data/annotationsLessExon/ENSG00000225431.mem
+    jobid: 744
+    wildcards: gene=ENSG00000225431
+
+[Sun May 17 20:57:25 2020]
+Finished job 40.
+4 of 371 steps (1%) done
+
+[Sun May 17 20:57:25 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000223799.gtf, data/chr21.fa, data/annotations/ENSG00000223799.fa
+    output: data/annotationsLessExon/ENSG00000223799.mem
+    jobid: 80
+    wildcards: gene=ENSG00000223799
+
+[Sun May 17 20:57:25 2020]
+Finished job 24.
+5 of 371 steps (1%) done
+
+[Sun May 17 20:57:25 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000223078.gtf, data/chr21.fa, data/annotations/ENSG00000223078.fa
+    output: data/annotationsLessExon/ENSG00000223078.mem
+    jobid: 335
+    wildcards: gene=ENSG00000223078
+
+[Sun May 17 20:57:26 2020]
+Finished job 351.
+6 of 371 steps (2%) done
+
+[Sun May 17 20:57:26 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000223608.gtf, data/chr21.fa, data/annotations/ENSG00000223608.fa
+    output: data/annotationsLessExon/ENSG00000223608.mem
+    jobid: 873
+    wildcards: gene=ENSG00000223608
+
+[Sun May 17 20:57:28 2020]
+Finished job 335.
+7 of 371 steps (2%) done
+
+[Sun May 17 20:57:28 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000228961.gtf, data/chr21.fa, data/annotations/ENSG00000228961.fa
+    output: data/annotationsLessExon/ENSG00000228961.mem
+    jobid: 194
+    wildcards: gene=ENSG00000228961
+
+[Sun May 17 20:57:30 2020]
+Finished job 708.
+8 of 371 steps (2%) done
+
+[Sun May 17 20:57:30 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000234293.gtf, data/chr21.fa, data/annotations/ENSG00000234293.fa
+    output: data/annotationsLessExon/ENSG00000234293.mem
+    jobid: 82
+    wildcards: gene=ENSG00000234293
+
+[Sun May 17 20:57:30 2020]
+Finished job 744.
+9 of 371 steps (2%) done
+
+[Sun May 17 20:57:30 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000233213.gtf, data/chr21.fa, data/annotations/ENSG00000233213.fa
+    output: data/annotationsLessExon/ENSG00000233213.mem
+    jobid: 667
+    wildcards: gene=ENSG00000233213
+
+[Sun May 17 20:57:30 2020]
+Finished job 80.
+10 of 371 steps (3%) done
+
+[Sun May 17 20:57:30 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000224388.gtf, data/chr21.fa, data/annotations/ENSG00000224388.fa
+    output: data/annotationsLessExon/ENSG00000224388.mem
+    jobid: 5
+    wildcards: gene=ENSG00000224388
+
+[Sun May 17 20:57:31 2020]
+Finished job 194.
+11 of 371 steps (3%) done
+
+[Sun May 17 20:57:31 2020]
+rule generateMemIntron:
+    input: data/annotationsLessExon/ENSG00000239023.gtf, data/chr21.fa, data/annotations/ENSG00000239023.fa
+    output: data/annotationsLessExon/ENSG00000239023.mem
+    jobid: 102
+    wildcards: gene=ENSG00000239023
+
+Terminating processes on user request, this might take some time.
+[Sun May 17 20:57:31 2020]
+[Sun May 17 20:57:31 2020]
+[Sun May 17 20:57:31 2020]
+Error in rule generateMemIntron:
+Error in rule generateMemIntron:
+Error in rule generateMemIntron:
+[Sun May 17 20:57:31 2020]
+[Sun May 17 20:57:31 2020]
+    jobid: 102
+    jobid: 873
+    jobid: 5
+Error in rule generateMemIntron:
+[Sun May 17 20:57:31 2020]
+Error in rule generateMemIntron:
+    output: data/annotationsLessExon/ENSG00000239023.mem
+    output: data/annotationsLessExon/ENSG00000223608.mem
+    output: data/annotationsLessExon/ENSG00000224388.mem
+    jobid: 332
+Error in rule generateMemIntron:
+    jobid: 667
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000239023.gtf -s data/annotations/ENSG00000239023.fa -o data/annotationsLessExon/ENSG00000239023.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000223608.gtf -s data/annotations/ENSG00000223608.fa -o data/annotationsLessExon/ENSG00000223608.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000224388.gtf -s data/annotations/ENSG00000224388.fa -o data/annotationsLessExon/ENSG00000224388.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    output: data/annotationsLessExon/ENSG00000157551.mem
+    jobid: 82
+    output: data/annotationsLessExon/ENSG00000233213.mem
+
+
+
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000157551.gtf -s data/annotations/ENSG00000157551.fa -o data/annotationsLessExon/ENSG00000157551.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    output: data/annotationsLessExon/ENSG00000234293.mem
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000233213.gtf -s data/annotations/ENSG00000233213.fa -o data/annotationsLessExon/ENSG00000233213.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000223608.mem
+
+    shell:
+        
+        ../bin/SpliceAwareAligner -g data/chr21.fa -a data/annotationsLessExon/ENSG00000234293.gtf -s data/annotations/ENSG00000234293.fa -o data/annotationsLessExon/ENSG00000234293.mem -i
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000224388.mem
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000157551.mem
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000233213.mem
+Removing output files of failed job generateMemIntron since they might be corrupted:
+data/annotationsLessExon/ENSG00000234293.mem
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-17T205718.791142.snakemake.log

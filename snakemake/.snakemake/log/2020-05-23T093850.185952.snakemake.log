@@ -1,0 +1,3 @@
+Building DAG of jobs...
+Updating job 1 (generatePlot).
+Cancelling snakemake on user request.

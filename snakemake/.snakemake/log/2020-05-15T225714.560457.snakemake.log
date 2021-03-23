@@ -1,0 +1,26 @@
+The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	generatePlot
+	1	run_after_checkpoint
+	2
+
+[Fri May 15 22:57:17 2020]
+rule generatePlot:
+    input: data/results
+    output: data/results/data.png
+    jobid: 2
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 170 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+data/results/data.png
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-15T225714.560457.snakemake.log

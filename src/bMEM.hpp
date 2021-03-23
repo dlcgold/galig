@@ -49,6 +49,8 @@ typedef std::list<path_item> path_type;
 class BackwardMEM {
 private:
   tCST cst;
+  // bool per identificare introni
+  bool intron;
   std::list<Mem> MEMs;
   tCST::size_type backward_search(const tCST::csa_type&,
                                   const unsigned char&,
@@ -59,7 +61,7 @@ private:
               const size_type&,
               const size_type&);
 public:
-  BackwardMEM(const std::string&, const std::string&);
+  BackwardMEM(const std::string&, const std::string&, const bool&);
   std::list<Mem> getMEMs(const std::string&, const unsigned int&);
   void printMEMs();
 };

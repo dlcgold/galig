@@ -1,0 +1,526 @@
+The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	875	compareMemNoExon
+	1	run_after_checkpoint
+	876
+
+[Sat May 16 10:56:46 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000183145NoExon.mem, data/annotations/ENSG00000183145.mem, data/annotationsLessExon/ENSG00000183145.gtf, data/annotations/ENSG00000183145.gtf
+    output: data/results/ENSG00000183145NoExon.txt
+    jobid: 5272
+    wildcards: gene=ENSG00000183145
+
+[Sat May 16 10:56:46 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000229962NoExon.mem, data/annotations/ENSG00000229962.mem, data/annotationsLessExon/ENSG00000229962.gtf, data/annotations/ENSG00000229962.gtf
+    output: data/results/ENSG00000229962NoExon.txt
+    jobid: 5720
+    wildcards: gene=ENSG00000229962
+
+[Sat May 16 10:56:46 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000234880NoExon.mem, data/annotations/ENSG00000234880.mem, data/annotationsLessExon/ENSG00000234880.gtf, data/annotations/ENSG00000234880.gtf
+    output: data/results/ENSG00000234880NoExon.txt
+    jobid: 6100
+    wildcards: gene=ENSG00000234880
+
+[Sat May 16 10:56:46 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000224018NoExon.mem, data/annotations/ENSG00000224018.mem, data/annotationsLessExon/ENSG00000224018.gtf, data/annotations/ENSG00000224018.gtf
+    output: data/results/ENSG00000224018NoExon.txt
+    jobid: 5377
+    wildcards: gene=ENSG00000224018
+
+[Sat May 16 10:56:47 2020]
+Finished job 5272.
+1 of 876 steps (0.11%) done
+[Sat May 16 10:56:47 2020]
+Finished job 5377.
+2 of 876 steps (0.23%) done
+[Sat May 16 10:56:47 2020]
+Finished job 6100.
+3 of 876 steps (0.34%) done
+[Sat May 16 10:56:47 2020]
+Finished job 5720.
+4 of 876 steps (0.46%) done
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000232401NoExon.mem, data/annotations/ENSG00000232401.mem, data/annotationsLessExon/ENSG00000232401.gtf, data/annotations/ENSG00000232401.gtf
+    output: data/results/ENSG00000232401NoExon.txt
+    jobid: 6081
+    wildcards: gene=ENSG00000232401
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000188660NoExon.mem, data/annotations/ENSG00000188660.mem, data/annotationsLessExon/ENSG00000188660.gtf, data/annotations/ENSG00000188660.gtf
+    output: data/results/ENSG00000188660NoExon.txt
+    jobid: 5440
+    wildcards: gene=ENSG00000188660
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000280441NoExon.mem, data/annotations/ENSG00000280441.mem, data/annotationsLessExon/ENSG00000280441.gtf, data/annotations/ENSG00000280441.gtf
+    output: data/results/ENSG00000280441NoExon.txt
+    jobid: 5734
+    wildcards: gene=ENSG00000280441
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000205927NoExon.mem, data/annotations/ENSG00000205927.mem, data/annotationsLessExon/ENSG00000205927.gtf, data/annotations/ENSG00000205927.gtf
+    output: data/results/ENSG00000205927NoExon.txt
+    jobid: 6044
+    wildcards: gene=ENSG00000205927
+
+[Sat May 16 10:56:47 2020]
+Finished job 5440.
+5 of 876 steps (0.57%) done
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000226527NoExon.mem, data/annotations/ENSG00000226527.mem, data/annotationsLessExon/ENSG00000226527.gtf, data/annotations/ENSG00000226527.gtf
+    output: data/results/ENSG00000226527NoExon.txt
+    jobid: 5391
+    wildcards: gene=ENSG00000226527
+
+[Sat May 16 10:56:47 2020]
+Finished job 6081.
+6 of 876 steps (0.68%) done
+[Sat May 16 10:56:47 2020]
+Finished job 6044.
+7 of 876 steps (0.80%) done
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000160213NoExon.mem, data/annotations/ENSG00000160213.mem, data/annotationsLessExon/ENSG00000160213.gtf, data/annotations/ENSG00000160213.gtf
+    output: data/results/ENSG00000160213NoExon.txt
+    jobid: 6045
+    wildcards: gene=ENSG00000160213
+
+[Sat May 16 10:56:47 2020]
+Finished job 5734.
+8 of 876 steps (0.91%) done
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000224924NoExon.mem, data/annotations/ENSG00000224924.mem, data/annotationsLessExon/ENSG00000224924.gtf, data/annotations/ENSG00000224924.gtf
+    output: data/results/ENSG00000224924NoExon.txt
+    jobid: 5550
+    wildcards: gene=ENSG00000224924
+
+
+[Sat May 16 10:56:47 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000226496NoExon.mem, data/annotations/ENSG00000226496.mem, data/annotationsLessExon/ENSG00000226496.gtf, data/annotations/ENSG00000226496.gtf
+    output: data/results/ENSG00000226496NoExon.txt
+    jobid: 5657
+    wildcards: gene=ENSG00000226496
+
+[Sat May 16 10:56:48 2020]
+Finished job 5391.
+9 of 876 steps (1%) done
+
+[Sat May 16 10:56:48 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000236830NoExon.mem, data/annotations/ENSG00000236830.mem, data/annotationsLessExon/ENSG00000236830.gtf, data/annotations/ENSG00000236830.gtf
+    output: data/results/ENSG00000236830NoExon.txt
+    jobid: 5759
+    wildcards: gene=ENSG00000236830
+
+[Sat May 16 10:56:48 2020]
+Finished job 6045.
+10 of 876 steps (1%) done
+[Sat May 16 10:56:48 2020]
+Finished job 5657.
+11 of 876 steps (1%) done
+
+[Sat May 16 10:56:48 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000173276NoExon.mem, data/annotations/ENSG00000173276.mem, data/annotationsLessExon/ENSG00000173276.gtf, data/annotations/ENSG00000173276.gtf
+    output: data/results/ENSG00000173276NoExon.txt
+    jobid: 6086
+    wildcards: gene=ENSG00000173276
+
+
+[Sat May 16 10:56:48 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000215386NoExon.mem, data/annotations/ENSG00000215386.mem, data/annotationsLessExon/ENSG00000215386.gtf, data/annotations/ENSG00000215386.gtf
+    output: data/results/ENSG00000215386NoExon.txt
+    jobid: 5507
+    wildcards: gene=ENSG00000215386
+
+[Sat May 16 10:56:48 2020]
+Finished job 5550.
+12 of 876 steps (1%) done
+
+[Sat May 16 10:56:48 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000238197NoExon.mem, data/annotations/ENSG00000238197.mem, data/annotationsLessExon/ENSG00000238197.gtf, data/annotations/ENSG00000238197.gtf
+    output: data/results/ENSG00000238197NoExon.txt
+    jobid: 5835
+    wildcards: gene=ENSG00000238197
+
+[Sat May 16 10:56:49 2020]
+Finished job 6086.
+13 of 876 steps (1%) done
+[Sat May 16 10:56:49 2020]
+Finished job 5759.
+14 of 876 steps (2%) done
+[Sat May 16 10:56:49 2020]
+Finished job 5507.
+15 of 876 steps (2%) done
+[Sat May 16 10:56:49 2020]
+Finished job 5835.
+16 of 876 steps (2%) done
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000279094NoExon.mem, data/annotations/ENSG00000279094.mem, data/annotationsLessExon/ENSG00000279094.gtf, data/annotations/ENSG00000279094.gtf
+    output: data/results/ENSG00000279094NoExon.txt
+    jobid: 5945
+    wildcards: gene=ENSG00000279094
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000215424NoExon.mem, data/annotations/ENSG00000215424.mem, data/annotationsLessExon/ENSG00000215424.gtf, data/annotations/ENSG00000215424.gtf
+    output: data/results/ENSG00000215424NoExon.txt
+    jobid: 5618
+    wildcards: gene=ENSG00000215424
+
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000270071NoExon.mem, data/annotations/ENSG00000270071.mem, data/annotationsLessExon/ENSG00000270071.gtf, data/annotations/ENSG00000270071.gtf
+    output: data/results/ENSG00000270071NoExon.txt
+    jobid: 5898
+    wildcards: gene=ENSG00000270071
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000231867NoExon.mem, data/annotations/ENSG00000231867.mem, data/annotationsLessExon/ENSG00000231867.gtf, data/annotations/ENSG00000231867.gtf
+    output: data/results/ENSG00000231867NoExon.txt
+    jobid: 5443
+    wildcards: gene=ENSG00000231867
+
+[Sat May 16 10:56:49 2020]
+Finished job 5945.
+17 of 876 steps (2%) done
+[Sat May 16 10:56:49 2020]
+Finished job 5898.
+18 of 876 steps (2%) done
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000243927NoExon.mem, data/annotations/ENSG00000243927.mem, data/annotationsLessExon/ENSG00000243927.gtf, data/annotations/ENSG00000243927.gtf
+    output: data/results/ENSG00000243927NoExon.txt
+    jobid: 5735
+    wildcards: gene=ENSG00000243927
+
+[Sat May 16 10:56:49 2020]
+Finished job 5618.
+19 of 876 steps (2%) done
+[Sat May 16 10:56:49 2020]
+Finished job 5443.
+20 of 876 steps (2%) done
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000180509NoExon.mem, data/annotations/ENSG00000180509.mem, data/annotationsLessExon/ENSG00000180509.gtf, data/annotations/ENSG00000180509.gtf
+    output: data/results/ENSG00000180509NoExon.txt
+    jobid: 6008
+    wildcards: gene=ENSG00000180509
+
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000275496NoExon.mem, data/annotations/ENSG00000275496.mem, data/annotationsLessExon/ENSG00000275496.gtf, data/annotations/ENSG00000275496.gtf
+    output: data/results/ENSG00000275496NoExon.txt
+    jobid: 5962
+    wildcards: gene=ENSG00000275496
+
+
+[Sat May 16 10:56:49 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000276289NoExon.mem, data/annotations/ENSG00000276289.mem, data/annotationsLessExon/ENSG00000276289.gtf, data/annotations/ENSG00000276289.gtf
+    output: data/results/ENSG00000276289NoExon.txt
+    jobid: 6011
+    wildcards: gene=ENSG00000276289
+
+[Sat May 16 10:56:50 2020]
+Finished job 6008.
+21 of 876 steps (2%) done
+[Sat May 16 10:56:50 2020]
+Finished job 5735.
+22 of 876 steps (3%) done
+[Sat May 16 10:56:50 2020]
+Finished job 6011.
+23 of 876 steps (3%) done
+[Sat May 16 10:56:50 2020]
+Finished job 5962.
+24 of 876 steps (3%) done
+
+[Sat May 16 10:56:50 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000160194NoExon.mem, data/annotations/ENSG00000160194.mem, data/annotationsLessExon/ENSG00000160194.gtf, data/annotations/ENSG00000160194.gtf
+    output: data/results/ENSG00000160194NoExon.txt
+    jobid: 5300
+    wildcards: gene=ENSG00000160194
+
+[Sat May 16 10:56:50 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000233056NoExon.mem, data/annotations/ENSG00000233056.mem, data/annotationsLessExon/ENSG00000233056.gtf, data/annotations/ENSG00000233056.gtf
+    output: data/results/ENSG00000233056NoExon.txt
+    jobid: 5924
+    wildcards: gene=ENSG00000233056
+
+[Sat May 16 10:56:50 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000154645NoExon.mem, data/annotations/ENSG00000154645.mem, data/annotationsLessExon/ENSG00000154645.gtf, data/annotations/ENSG00000154645.gtf
+    output: data/results/ENSG00000154645NoExon.txt
+    jobid: 5646
+    wildcards: gene=ENSG00000154645
+
+[Sat May 16 10:56:50 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000156253NoExon.mem, data/annotations/ENSG00000156253.mem, data/annotationsLessExon/ENSG00000156253.gtf, data/annotations/ENSG00000156253.gtf
+    output: data/results/ENSG00000156253NoExon.txt
+    jobid: 6061
+    wildcards: gene=ENSG00000156253
+
+[Sat May 16 10:56:51 2020]
+Finished job 5300.
+25 of 876 steps (3%) done
+
+[Sat May 16 10:56:51 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000183421NoExon.mem, data/annotations/ENSG00000183421.mem, data/annotationsLessExon/ENSG00000183421.gtf, data/annotations/ENSG00000183421.gtf
+    output: data/results/ENSG00000183421NoExon.txt
+    jobid: 5378
+    wildcards: gene=ENSG00000183421
+
+[Sat May 16 10:56:51 2020]
+Finished job 5924.
+26 of 876 steps (3%) done
+[Sat May 16 10:56:51 2020]
+Finished job 5646.
+27 of 876 steps (3%) done
+
+[Sat May 16 10:56:51 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000205581NoExon.mem, data/annotations/ENSG00000205581.mem, data/annotationsLessExon/ENSG00000205581.gtf, data/annotations/ENSG00000205581.gtf
+    output: data/results/ENSG00000205581NoExon.txt
+    jobid: 6106
+    wildcards: gene=ENSG00000205581
+[Sat May 16 10:56:51 2020]
+
+Finished job 6061.
+28 of 876 steps (3%) done
+
+[Sat May 16 10:56:51 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000186866NoExon.mem, data/annotations/ENSG00000186866.mem, data/annotationsLessExon/ENSG00000186866.gtf, data/annotations/ENSG00000186866.gtf
+    output: data/results/ENSG00000186866NoExon.txt
+    jobid: 5900
+    wildcards: gene=ENSG00000186866
+
+[Sat May 16 10:56:51 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000274333NoExon.mem, data/annotations/ENSG00000274333.mem, data/annotationsLessExon/ENSG00000274333.gtf, data/annotations/ENSG00000274333.gtf
+    output: data/results/ENSG00000274333NoExon.txt
+    jobid: 5285
+    wildcards: gene=ENSG00000274333
+
+[Sat May 16 10:56:52 2020]
+Finished job 5378.
+29 of 876 steps (3%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000159200NoExon.mem, data/annotations/ENSG00000159200.mem, data/annotationsLessExon/ENSG00000159200.gtf, data/annotations/ENSG00000159200.gtf
+    output: data/results/ENSG00000159200NoExon.txt
+    jobid: 5641
+    wildcards: gene=ENSG00000159200
+
+[Sat May 16 10:56:52 2020]
+Finished job 6106.
+30 of 876 steps (3%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000184809NoExon.mem, data/annotations/ENSG00000184809.mem, data/annotationsLessExon/ENSG00000184809.gtf, data/annotations/ENSG00000184809.gtf
+    output: data/results/ENSG00000184809NoExon.txt
+    jobid: 5559
+    wildcards: gene=ENSG00000184809
+
+[Sat May 16 10:56:52 2020]
+Finished job 5285.
+31 of 876 steps (4%) done
+[Sat May 16 10:56:52 2020]
+Finished job 5900.
+32 of 876 steps (4%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000277991NoExon.mem, data/annotations/ENSG00000277991.mem, data/annotationsLessExon/ENSG00000277991.gtf, data/annotations/ENSG00000277991.gtf
+    output: data/results/ENSG00000277991NoExon.txt
+    jobid: 5324
+    wildcards: gene=ENSG00000277991
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000177692NoExon.mem, data/annotations/ENSG00000177692.mem, data/annotationsLessExon/ENSG00000177692.gtf, data/annotations/ENSG00000177692.gtf
+    output: data/results/ENSG00000177692NoExon.txt
+    jobid: 5693
+    wildcards: gene=ENSG00000177692
+
+[Sat May 16 10:56:52 2020]
+Finished job 5641.
+33 of 876 steps (4%) done
+[Sat May 16 10:56:52 2020]
+Finished job 5559.
+34 of 876 steps (4%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000183036NoExon.mem, data/annotations/ENSG00000183036.mem, data/annotationsLessExon/ENSG00000183036.gtf, data/annotations/ENSG00000183036.gtf
+    output: data/results/ENSG00000183036NoExon.txt
+    jobid: 5922
+    wildcards: gene=ENSG00000183036
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000183250NoExon.mem, data/annotations/ENSG00000183250.mem, data/annotationsLessExon/ENSG00000183250.gtf, data/annotations/ENSG00000183250.gtf
+    output: data/results/ENSG00000183250NoExon.txt
+    jobid: 5284
+    wildcards: gene=ENSG00000183250
+
+[Sat May 16 10:56:52 2020]
+Finished job 5693.
+35 of 876 steps (4%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000205622NoExon.mem, data/annotations/ENSG00000205622.mem, data/annotationsLessExon/ENSG00000205622.gtf, data/annotations/ENSG00000205622.gtf
+    output: data/results/ENSG00000205622NoExon.txt
+    jobid: 5348
+    wildcards: gene=ENSG00000205622
+
+[Sat May 16 10:56:52 2020]
+Finished job 5324.
+36 of 876 steps (4%) done
+
+[Sat May 16 10:56:52 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000233922NoExon.mem, data/annotations/ENSG00000233922.mem, data/annotationsLessExon/ENSG00000233922.gtf, data/annotations/ENSG00000233922.gtf
+    output: data/results/ENSG00000233922NoExon.txt
+    jobid: 5837
+    wildcards: gene=ENSG00000233922
+
+[Sat May 16 10:56:53 2020]
+Finished job 5284.
+37 of 876 steps (4%) done
+[Sat May 16 10:56:53 2020]
+Finished job 5922.
+38 of 876 steps (4%) done
+[Sat May 16 10:56:53 2020]
+Finished job 5348.
+39 of 876 steps (4%) done
+
+[Sat May 16 10:56:53 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000182586NoExon.mem, data/annotations/ENSG00000182586.mem, data/annotationsLessExon/ENSG00000182586.gtf, data/annotations/ENSG00000182586.gtf
+    output: data/results/ENSG00000182586NoExon.txt
+    jobid: 5268
+    wildcards: gene=ENSG00000182586
+
+[Sat May 16 10:56:53 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000184221NoExon.mem, data/annotations/ENSG00000184221.mem, data/annotationsLessExon/ENSG00000184221.gtf, data/annotations/ENSG00000184221.gtf
+    output: data/results/ENSG00000184221NoExon.txt
+    jobid: 5385
+    wildcards: gene=ENSG00000184221
+
+
+[Sat May 16 10:56:53 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000174680NoExon.mem, data/annotations/ENSG00000174680.mem, data/annotationsLessExon/ENSG00000174680.gtf, data/annotations/ENSG00000174680.gtf
+    output: data/results/ENSG00000174680NoExon.txt
+    jobid: 5698
+    wildcards: gene=ENSG00000174680
+
+[Sat May 16 10:56:53 2020]
+Finished job 5837.
+40 of 876 steps (5%) done
+
+[Sat May 16 10:56:53 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000160208NoExon.mem, data/annotations/ENSG00000160208.mem, data/annotationsLessExon/ENSG00000160208.gtf, data/annotations/ENSG00000160208.gtf
+    output: data/results/ENSG00000160208NoExon.txt
+    jobid: 5599
+    wildcards: gene=ENSG00000160208
+
+[Sat May 16 10:56:54 2020]
+Finished job 5268.
+41 of 876 steps (5%) done
+[Sat May 16 10:56:54 2020]
+Finished job 5698.
+42 of 876 steps (5%) done
+
+[Sat May 16 10:56:54 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000227456NoExon.mem, data/annotations/ENSG00000227456.mem, data/annotationsLessExon/ENSG00000227456.gtf, data/annotations/ENSG00000227456.gtf
+    output: data/results/ENSG00000227456NoExon.txt
+    jobid: 5787
+    wildcards: gene=ENSG00000227456
+
+[Sat May 16 10:56:54 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000237232NoExon.mem, data/annotations/ENSG00000237232.mem, data/annotationsLessExon/ENSG00000237232.gtf, data/annotations/ENSG00000237232.gtf
+    output: data/results/ENSG00000237232NoExon.txt
+    jobid: 5564
+    wildcards: gene=ENSG00000237232
+
+[Sat May 16 10:56:54 2020]
+Finished job 5385.
+43 of 876 steps (5%) done
+Terminating processes on user request, this might take some time.
+[Sat May 16 10:56:54 2020]
+Error in rule compareMemNoExon:
+    jobid: 5599
+    output: data/results/ENSG00000160208NoExon.txt
+
+RuleException:
+CalledProcessError in line 204 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Command 'set -euo pipefail;  /usr/bin/python /home/dlcgold/stage-unimib/extra/snake/.snakemake/scripts/tmpe7pok7op.compareMem.py' died with <Signals.SIGINT: 2>.
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 204, in __rule_compareMemNoExon
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Removing output files of failed job compareMemNoExon since they might be corrupted:
+data/results/ENSG00000160208NoExon.txt
+[Sat May 16 10:56:54 2020]
+Error in rule compareMemNoExon:
+    jobid: 5787
+    output: data/results/ENSG00000227456NoExon.txt
+
+RuleException:
+CalledProcessError in line 204 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Command 'set -euo pipefail;  /usr/bin/python /home/dlcgold/stage-unimib/extra/snake/.snakemake/scripts/tmponb_03_3.compareMem.py' died with <Signals.SIGINT: 2>.
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 204, in __rule_compareMemNoExon
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Sat May 16 10:56:54 2020]
+Error in rule compareMemNoExon:
+    jobid: 5564
+    output: data/results/ENSG00000237232NoExon.txt
+
+RuleException:
+CalledProcessError in line 204 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Command 'set -euo pipefail;  /usr/bin/python /home/dlcgold/stage-unimib/extra/snake/.snakemake/scripts/tmpiux4ks09.compareMem.py' died with <Signals.SIGINT: 2>.
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 204, in __rule_compareMemNoExon
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Complete log: /home/dlcgold/stage-unimib/extra/snake/.snakemake/log/2020-05-16T105640.735187.snakemake.log

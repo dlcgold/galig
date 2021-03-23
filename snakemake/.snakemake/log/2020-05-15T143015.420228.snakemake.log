@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 128 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Wildcards in input files cannot be determined from output files:
+'annotationsLE_folder'

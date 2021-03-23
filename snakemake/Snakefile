@@ -1,0 +1,182 @@
+configfile: "config.yaml"
+
+import os
+import gffutils
+
+data_folder = config["folder"]["data"]
+annotations_name_folder = config["folder"]["ann"]
+annotationsLE_name_folder = config["folder"]["annLE"]
+results_name_folder = config["folder"]["res"]
+genome_url = config["url"]["genome"]
+annotation_url = config["url"]["annotation"]
+chromosome = config["params"]["chromosome"]
+rangeMin = config["params"]["rangeMin"]
+rangeMax = config["params"]["rangeMax"]
+#n_gtf = config["params"]["numberOfGtf"]
+n_reads = config["params"]["numberOfReads"]
+l_reads = config["params"]["lenOfReads"]
+
+
+genome = str.format("{}/chr{}.fa", data_folder, chromosome)
+annotationTmp = str.format("{}/annotation.gtf", data_folder)
+annotation = str.format("{}/annotation{}.gtf", data_folder, chromosome)
+annotations_folder = os.path.join(data_folder, annotations_name_folder)
+annotationsLE_folder = os.path.join(data_folder, annotationsLE_name_folder)
+results_folder = os.path.join(data_folder, results_name_folder)
+
+rule downloadGenome:
+    output:
+        genome
+    shell:
+        """
+        wget -O - {genome_url} | gunzip > {output}
+        """
+rule downloadAnnotation:
+    output:
+        annotationTmp
+    shell:
+        """
+        wget -O - {annotation_url} | gunzip > {output}
+        """
+
+rule fetch_annotation:
+    input:
+        annotationTmp
+    output:
+        annotation       
+    shell:
+        """
+        grep -P \"^{chromosome}\\t\" {input} > {output}
+        """
+
+checkpoint splitAnnotation:
+    input:
+        annotation
+    params:
+        annotations_name_folder,
+        data_folder
+    output:
+        directory(annotations_folder)
+    script:
+        "scripts/splitGene.py"
+
+def aggregate_results(wildcards):
+    GENES = [f.split('.')[0] for f in os.listdir(checkpoints.splitAnnotation.get().output[0]) if f.endswith('.gtf')]
+    return expand("{res}/{gene}{detail}.txt",res=results_folder, gene=GENES, detail=["", "NoExon"])
+
+rule run_after_checkpoint:
+    input:
+        os.path.join(results_folder, "data.png"),
+        os.path.join(results_folder, "times.png"),
+        os.path.join(results_folder, "mems.png")
+
+rule removeExon:
+    input:
+        os.path.join(annotations_folder, "{gene}.gtf"),
+        genome
+    params:
+        data_folder,
+        annotationsLE_name_folder,
+        rangeMin,
+        rangeMax
+    output:
+        "{ann}/{gene}.gtf"       
+    script:
+        "scripts/removeExon.py"
+
+rule generateReads:
+    input:
+        gtf=os.path.join(annotations_folder, "{gene}.gtf"),
+        fa=genome
+    output:
+        os.path.join(annotations_folder, "{gene}.fa")
+    shell:
+        """
+        bash scripts/RNASeqReadSimulator/RNASeqReadSimulator {input.fa} {input.gtf} {output} {n_reads} {l_reads}
+        """
+
+rule generateMemNoIntron:
+    input:
+        gtf=os.path.join(annotations_folder, "{gene}.gtf"),
+        fa=genome,
+        reads=os.path.join(annotations_folder, "{gene}.fa"),
+    output:
+        os.path.join(annotations_folder, "{gene}.mem")
+    benchmark:
+        os.path.join("benchmarks", "{gene}Origin.tsv")
+    shell:
+        """
+        ../bin/SpliceAwareAligner -g {input.fa} -a {input.gtf} -s {input.reads} -o {output}
+
+        """
+        
+rule generateMemIntron:
+    input:
+        gtf=os.path.join(annotationsLE_folder, "{gene}.gtf"),
+        fa=genome,
+        reads=os.path.join(annotations_folder, "{gene}.fa"),
+    output:
+        os.path.join(annotationsLE_folder, "{gene}.mem")
+    benchmark:
+        os.path.join("benchmarks", "{gene}.tsv")
+    shell:
+        """
+        ../bin/SpliceAwareAligner -g {input.fa} -a {input.gtf} -s {input.reads} -o {output} -i
+        """    
+
+rule generateMemNoExon:
+    input:
+        gtf=os.path.join(annotationsLE_folder, "{gene}.gtf"),
+        fa=genome,
+        reads=os.path.join(annotations_folder, "{gene}.fa"),
+    output:
+        os.path.join(annotationsLE_folder, "{gene}NoExon.mem")
+    benchmark:
+        os.path.join("benchmarks", "{gene}NoExon.tsv")
+    shell:
+        """
+        ../bin/SpliceAwareAligner -g {input.fa} -a {input.gtf} -s {input.reads} -o {output}
+        """    
+    
+rule compareMemIntron:
+    input:
+         memi=os.path.join(annotationsLE_folder, "{gene}.mem"),
+         mem=os.path.join(annotations_folder, "{gene}.mem"),
+         gtfi=os.path.join(annotationsLE_folder, "{gene}.gtf"),
+         gtf=os.path.join(annotations_folder, "{gene}.gtf"),
+    params:
+        data_folder,
+        results_name_folder
+    output:
+         os.path.join(results_folder, "{gene}.txt")
+    script:
+        "scripts/compareMem.py"
+
+
+rule compareMemNoExon:
+    input:
+         memi=os.path.join(annotationsLE_folder, "{gene}NoExon.mem"),
+         mem=os.path.join(annotations_folder, "{gene}.mem"),
+         gtfi=os.path.join(annotationsLE_folder, "{gene}.gtf"),
+         gtf=os.path.join(annotations_folder, "{gene}.gtf")
+    params:
+        data_folder,
+        results_name_folder
+    output:
+         os.path.join(results_folder, "{gene}NoExon.txt")
+    script:
+        "scripts/compareMem.py"
+
+rule generatePlot:
+    input:
+        aggregate_results
+    params:
+        results_folder  
+    output:
+        os.path.join(results_folder, "data.png"),
+        os.path.join(results_folder, "times.png"),
+        os.path.join(results_folder, "mems.png")
+    script:
+        "scripts/generatePlot.py"
+        
+    

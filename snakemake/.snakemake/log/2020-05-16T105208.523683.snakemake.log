@@ -1,0 +1,57 @@
+The flag 'directory' used in rule generatePlot is only valid for outputs, not inputs.
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	873	compareMemIntron
+	875	compareMemNoExon
+	1	run_after_checkpoint
+	1749
+
+[Sat May 16 10:52:14 2020]
+rule compareMemIntron:
+    input: data/annotationsLessExon/ENSG00000229962NoExon.mem, data/annotations/ENSG00000229962.mem, data/annotationsLessExon/ENSG00000229962.gtf, data/annotations/ENSG00000229962.gtf
+    output: data/results/ENSG00000229962.txt
+    jobid: 4845
+    wildcards: gene=ENSG00000229962
+
+[Sat May 16 10:52:14 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000183145NoExon.mem, data/annotations/ENSG00000183145.mem, data/annotationsLessExon/ENSG00000183145.gtf, data/annotations/ENSG00000183145.gtf
+    output: data/results/ENSG00000183145NoExon.txt
+    jobid: 5272
+    wildcards: gene=ENSG00000183145
+
+[Sat May 16 10:52:14 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000229962NoExon.mem, data/annotations/ENSG00000229962.mem, data/annotationsLessExon/ENSG00000229962.gtf, data/annotations/ENSG00000229962.gtf
+    output: data/results/ENSG00000229962NoExon.txt
+    jobid: 5720
+    wildcards: gene=ENSG00000229962
+
+[Sat May 16 10:52:14 2020]
+rule compareMemNoExon:
+    input: data/annotationsLessExon/ENSG00000234880NoExon.mem, data/annotations/ENSG00000234880.mem, data/annotationsLessExon/ENSG00000234880.gtf, data/annotations/ENSG00000234880.gtf
+    output: data/results/ENSG00000234880NoExon.txt
+    jobid: 6100
+    wildcards: gene=ENSG00000234880
+
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+MissingOutputException in line 192 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+data/results/ENSG00000183145NoExon.txt
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 192 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+data/results/ENSG00000234880NoExon.txt
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+[Sat May 16 10:52:25 2020]
+Finished job 4845.
+1 of 1749 steps (0.06%) done
+Waiting at most 5 seconds for missing files.
+Cancelling snakemake on user request.

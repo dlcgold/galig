@@ -1,0 +1,2 @@
+SyntaxError in line 186 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+Multiple run or shell keywords in rule compareMemIntron. (Snakefile, line 186)

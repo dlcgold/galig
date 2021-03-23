@@ -1,0 +1,3 @@
+NameError in line 66 of /home/dlcgold/stage-unimib/extra/snake/Snakefile:
+name 'annotation_folder' is not defined
+  File "/home/dlcgold/stage-unimib/extra/snake/Snakefile", line 66, in <module>

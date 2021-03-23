@@ -1,0 +1,17 @@
+folder :
+  data : "data"
+  ann : "annotations" # sub dir inside /data
+  annLE : "annotationsLessExon"
+  res : "results"
+
+url:
+ genome : "ftp://ftp.ensembl.org/pub/release-100/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.21.fa.gz"
+ annotation : "ftp://ftp.ensembl.org/pub/release-100/gtf/homo_sapiens/Homo_sapiens.GRCh38.100.chr.gtf.gz"
+
+params:
+ chromosome : "21"
+ rangeMin : "100"
+ rangeMax : "250"
+ numberOfGtf : "10"
+ numberOfReads : "25000"
+ lenOfReads : "100"

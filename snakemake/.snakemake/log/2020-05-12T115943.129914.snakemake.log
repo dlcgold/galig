@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	downloadG
+	1
+
+[Tue May 12 11:59:43 2020]
+rule downloadG:
+    output: data/genome.fa
+    jobid: 0
+
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

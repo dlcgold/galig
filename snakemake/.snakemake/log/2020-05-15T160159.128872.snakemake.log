@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Updating job 0 (run_after_checkpoint).
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	875	removeExon
+	1	run_after_checkpoint
+	876
+
+[Fri May 15 16:01:59 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000182670.gtf, data/chr21.fa
+    output: data/annotationsLessExon/ENSG00000182670.gtf
+    jobid: 120
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000182670
+
+[Fri May 15 16:01:59 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000205726.gtf, data/chr21.fa
+    output: data/annotationsLessExon/ENSG00000205726.gtf
+    jobid: 286
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000205726
+
+[Fri May 15 16:01:59 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000215386.gtf, data/chr21.fa
+    output: data/annotationsLessExon/ENSG00000215386.gtf
+    jobid: 257
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000215386
+
+[Fri May 15 16:01:59 2020]
+rule removeExon:
+    input: data/annotations/ENSG00000160191.gtf, data/chr21.fa
+    output: data/annotationsLessExon/ENSG00000160191.gtf
+    jobid: 412
+    wildcards: ann=data/annotationsLessExon, gene=ENSG00000160191
+
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

@@ -1,0 +1,13 @@
+downloadGenome
+downloadAnnotation
+fetch_annotation
+splitAnnotation
+run_after_checkpoint
+removeExon
+generateReads
+generateMemNoIntron
+generateMemIntron
+generateMemNoExon
+compareMemIntron
+compareMemNoExon
+generatePlot
